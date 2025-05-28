@@ -87,6 +87,20 @@ app.post('/save-list', (req, res) => {
   res.json({ success: true });
 });
 
+app.post('/contact', (req, res) => {
+  const { email, message } = req.body;
+  if (!email || !message) return res.status(400).json({ error: 'Eksik veri' });
+  const entry = { email, message, date: new Date().toISOString() };
+  const filePath = path.join(__dirname, 'contact-messages.json');
+  let messages = [];
+  if (fs.existsSync(filePath)) {
+    messages = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  }
+  messages.push(entry);
+  fs.writeFileSync(filePath, JSON.stringify(messages, null, 2));
+  res.json({ success: true });
+});
+
 // Dosyadan veri okuma (Alışveriş listesi)
 function readData() {
   try {
@@ -142,7 +156,7 @@ app.get('/items', (req, res) => {
 // POST /items - yeni ürün ekle
 app.post('/items', (req, res) => {
   const items = readData();
-  const { name, quantity } = req.body;
+  const { name, quantity, unit } = req.body;
 
   if (!name || typeof quantity !== 'number' || quantity < 1) {
     return res.status(400).json({ error: 'Geçersiz ürün verisi' });
@@ -152,12 +166,12 @@ app.post('/items', (req, res) => {
     id: Date.now().toString(),
     name,
     quantity,
+    unit, // <-- unit bilgisini de kaydet
     checked: false,
   };
-
   items.push(newItem);
   writeData(items);
-  res.status(201).json(newItem);
+  res.json(newItem);
 });
 
 // PUT /items/:id - ürün güncelle

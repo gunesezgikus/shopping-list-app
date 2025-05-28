@@ -14,8 +14,14 @@
 <body>
   <header class="modern-navbar fixed-top shadow-sm">
     <div class="container-xl d-flex align-items-center justify-content-between py-2">
-      <span class="modern-title mb-0">🛒 Shopping App</span>
-      <nav>
+      <a href="/" class="modern-title mb-0" id="app-title" style="cursor:pointer; text-decoration:none;">🛒 Shopping
+        App</a>
+         <button id="navbar-toggle" class="navbar-hamburger" aria-label="Open menu" style="display:none;">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      <nav id="navbar-links">
         <button id="btn-create-list" class="btn modern-btn me-2">New List</button>
         <button id="btn-products-list" class="btn modern-btn me-2">Checklist</button>
         <button id="btn-show-old-lists" class="btn modern-btn me-2">Previous Lists</button>
@@ -25,7 +31,6 @@
   </header>
 
   <main style="padding-top:80px;">
-    <!-- Home: boş container -->
     <section id="home-section" class="modern-section" style="display:block;">
       <div class="content-wrapper">
         <h1>Welcome to Your Shopping App!</h1>
@@ -97,22 +102,38 @@
       <div id="old-lists-content"></div>
     </section>
   </main>
+  <!-- Footer veya body sonuna ekle -->
+  <div class="modal" id="contactModal" tabindex="-1"
+    style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); align-items:center; justify-content:center;">
+    <div
+      style="background:#fff; border-radius:12px; padding:32px 24px; max-width:400px; width:90vw; margin:auto; position:relative;">
+      <button id="closeContactModal"
+        style="position:absolute; right:16px; top:12px; background:none; border:none; font-size:1.5rem;">&times;</button>
+      <h2 style="font-size:1.3rem; margin-bottom:18px;">Contact Us</h2>
+      <form id="contactForm">
+        <input type="email" id="contactEmail" class="form-control mb-2" placeholder="Your email" required />
+        <textarea id="contactMessage" class="form-control mb-2" placeholder="Your message" rows="4" required></textarea>
+        <button type="submit" class="btn btn-primary w-100">Send</button>
+        <div id="contactResult" style="margin-top:10px; font-size:0.95rem;"></div>
+      </form>
+    </div>
+  </div>
   <footer class="modern-footer">
-  <div>
-    <span>&copy; 2025 Shopping App</span>
-    <span style="margin-left:16px;">Made with ❤️ by Güneş</span>
-  </div>
-  <div class="footer-links">
-    <a href="mailto:info@shoppingapp.com">info@shoppingapp.com</a>
-    <span class="footer-sep">|</span>
-    <a href="https://github.com/" target="_blank">GitHub</a>
-    <span class="footer-sep">|</span>
-    <a href="https://instagram.com/" target="_blank">Instagram</a>
-  </div>
-  <div class="footer-copy">
-    <small>All rights reserved. This is a demo project.</small>
-  </div>
-</footer>
+    <div>
+      <span>&copy; 2025 Shopping App</span>
+      <span style="margin-left:16px;">Made with ❤️ by Güneş</span>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:info@shoppingapp.com">info@shoppingapp.com</a>
+      <span class="footer-sep">|</span>
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <span class="footer-sep">|</span>
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-copy">
+      <small>All rights reserved. This is a demo project.</small>
+    </div>
+  </footer>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="App.js"></script>
 </body>
