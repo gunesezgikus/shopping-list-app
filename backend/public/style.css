@@ -1,0 +1,218 @@
+/* Body arka planı */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+#home-section {
+    background: url('supermarket.jpg') center center/cover no-repeat;
+    min-height: 480px;
+    position: relative;
+    margin-top:14px !important; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: center;
+    overflow: hidden;
+
+}
+
+#home-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.40);
+    border-radius: 18px;
+    z-index: 1;
+}
+#home-section > * {
+    position: relative;
+    z-index: 2;
+    max-width: auto;
+    padding: 0 20px;
+    color: #333;
+}
+
+#home-section .content-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: auto;
+    padding: 150px;
+    color: #2a2143;
+  }
+  #home-section h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+   #home-section p {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+/* Modern container/kart görünümü */
+.modern-section {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44, 44, 84, 0.18);
+    padding: 36px 28px 28px 28px;
+    position: relative;
+}
+
+.home-hero-img {
+    display: block;
+    max-width: 100%;
+    width: 420px;
+    margin: 0 auto 32px auto;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(44, 44, 84, 0.13);
+    object-fit: cover;
+}
+
+
+.modern-title {
+    font-family: "Sofia", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffde59;
+    padding: 24px 0 12px 0;
+}
+
+.modern-h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2a2143;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Modern butonlar */
+.modern-btn {
+    border-radius: 24px !important;
+    font-size: 1.2rem !important;
+    padding: 12px 32px !important;
+    margin: 0 8px 12px 0 !important;
+    background: linear-gradient(90deg, #ffde59 0%, #fae077 100%);
+    color: #2a2143 !important;
+    border: none !important;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(44, 44, 84, 0.08);
+    transition: background 0.2s, color 0.2s;
+}
+
+.modern-btn:hover {
+    background: linear-gradient(90deg, #fae077 0%, #ffde59 100%);
+    color: #001f3f !important;
+}
+
+/* Modern inputlar */
+.modern-input {
+    border-radius: 12px !important;
+    border: 1px solid #ffde59 !important;
+    font-size: 1.1rem !important;
+}
+
+/* Modern liste */
+.modern-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+.modern-list li {
+    background: #f7f6fa;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 14px 18px;
+    font-size: 1.1rem;
+    color: #2a2143;
+    box-shadow: 0 2px 8px rgba(44, 44, 84, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .modern-section {
+        max-width: 98vw;
+        padding: 18px 4vw;
+    }
+
+    .modern-title {
+        font-size: 1.5rem;
+    }
+}
+
+.modern-navbar {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 12px rgba(44, 44, 84, 0.08);
+    border-bottom: 1px solid #ececec;
+    z-index: 1000;
+}
+
+.modern-navbar .modern-title {
+    color: #2a2143;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modern-navbar nav .modern-btn {
+    background: none;
+    color: #2a2143 !important;
+    border: 1.5px solid #ffde59 !important;
+    background: linear-gradient(90deg, #fffbe6 0%, #fffde7 100%);
+    box-shadow: none;
+    font-size: 1rem !important;
+    padding: 6px 14px !important;
+    margin: 0 2px !important;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.modern-navbar nav .modern-btn:hover {
+    background: linear-gradient(90deg, #ffde59 0%, #fae077 100%);
+    color: #2a2143 !important;
+    border-color: #fae077 !important;
+}
+
+.modern-footer {
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    color: #2a2143;
+    text-align: center;
+    padding: 18px 0 14px 0;
+    font-size: 1.05rem;
+    border-top: 1px solid #ececec;
+    margin-top: 40px;
+    box-shadow: 0 -2px 12px rgba(44,44,84,0.06);
+    letter-spacing: 0.5px;
+}
+@media (max-width: 700px) {
+    .modern-navbar .modern-title {
+        font-size: 1.2rem;
+    }
+
+    .modern-navbar nav .modern-btn {
+        font-size: 0.95rem !important;
+        padding: 7px 10px !important;
+    }
+
+    @media (max-width: 700px) {
+        .home-hero-img {
+            width: 98vw;
+            max-width: 98vw;
+        }
+    }
+}
+
+
+
+/* Diğer mevcut stilleriniz burada kalabilir */
